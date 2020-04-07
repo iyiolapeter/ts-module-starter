@@ -9,21 +9,21 @@
     "test-with-watch": "jest --watch",
     "coverage": "jest --coverage",
     "build": "tsc",
-    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "format": "prettier --write \"src/**/*.ts\"",
     "lint": "tslint -p tsconfig.json",
-    "fix": "tslint --fix -p tsconfig.json",
+    "fix": "tslint -p tsconfig.json --fix",
     "prepare": "npm run build"
   },
   "author": "Peter Iyiola",
   "license": "ISC",
   "devDependencies": {
-    "@types/jest": "^24.0.15",
-    "husky": "^3.0.1",
-    "jest": "^24.8.0",
-    "lint-staged": "^9.2.1",
-    "prettier": "^1.17.1",
-    "ts-jest": "^24.0.2",
-    "tslint": "^5.17.0",
+    "@types/jest": "^25.2.1",
+    "husky": "^4.2.3",
+    "jest": "^25.2.7",
+    "lint-staged": "^10.1.2",
+    "prettier": "^2.0.4",
+    "ts-jest": "^25.3.1",
+    "tslint": "^6.1.1",
     "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.5.2"
   },
@@ -32,7 +32,12 @@
     "lib/**/*"
   ],
   "lint-staged": {
-    "*.{ts,tsx,js,jsx}": ["npm run lint", "prettier --write", "git add", "npm run build"]
+    "*.{ts,tsx,js,jsx}": [
+      "npm run lint",
+      "prettier --write",
+      "git add",
+      "npm run build"
+    ]
   },
   "husky": {
     "hooks": {
